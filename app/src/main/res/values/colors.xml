@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#E4F4FD</color>
+    <color name="purple_500">#409DC4</color>
+    <color name="purple_700">#0080B6</color>
+    <color name="teal_200">#409DC4</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="txt">#FAFAFA</color>
+    <color name="txtinput">#6666665e</color>
+    <color name="title">#666666</color>
+    <color name="inicio">#E42C64</color>
+    <color name="fin">#614AD3</color>
+    <color name="cnuevos">#0029FF</color>
+    <color name="cmuestras">#FF00A8</color>
+    <color name="crecuperadas">#36B20B</color>
+    <color name="chospitalizados">#E8B500</color>
+    <color name="cciudadano">#FF0000</color>
+    <color name="cfallecidos">#363B46</color>
+    <color name="btnCB">#6C92F4</color>
+</resources>

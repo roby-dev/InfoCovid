@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".register_activity">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        android:background="@drawable/register">
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:layout_alignParentTop="true"
+            android:layout_gravity="center"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:contentDescription="@string/logo_infocovid"
+            android:src="@drawable/user" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="80dp"
+            android:layout_marginLeft="240dp"
+            android:contentDescription="@string/logo_infocovid"
+            android:src="@drawable/covid" />
+
+
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="53dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:layout_marginBottom="-15dp"
+            android:fontFamily="@font/text_me_one"
+            android:text="@string/infocovid_19"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textColor="@color/purple_200"
+            android:textSize="25dp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+    <EditText
+        android:id="@+id/txtRNombres"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="30dp"
+        android:layout_below="@id/imageView3"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:background="@drawable/shape"
+        android:ems="10"
+        android:fontFamily="@font/text_me_one"
+        android:hint="@string/nombres"
+        android:inputType="textPersonName"
+        android:textColorHint="@color/txtinput"
+        android:textSize="15dp" />
+    <EditText
+        android:id="@+id/txtRApellidos"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="5dp"
+        android:layout_below="@id/imageView3"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:background="@drawable/shape"
+        android:ems="10"
+        android:fontFamily="@font/text_me_one"
+        android:hint="@string/apellidos"
+        android:inputType="textPersonName"
+        android:textColorHint="@color/txtinput"
+        android:textSize="15dp" />
+
+    <EditText
+        android:id="@+id/txtREmail"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="5dp"
+        android:layout_below="@id/imageView3"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:background="@drawable/shape"
+        android:ems="10"
+        android:fontFamily="@font/text_me_one"
+        android:hint="@string/email"
+        android:inputType="textPersonName"
+        android:textColorHint="@color/txtinput"
+        android:textSize="15dp" />
+
+    <EditText
+        android:id="@+id/txtRPassword"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="5dp"
+        android:layout_below="@id/imageView3"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:background="@drawable/shape"
+        android:ems="10"
+        android:fontFamily="@font/text_me_one"
+        android:hint="@string/password"
+        android:inputType="textPassword"
+        android:textColorHint="@color/txtinput"
+        android:textSize="15dp" />
+
+    <EditText
+        android:id="@+id/txtRDescripcion"
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:layout_below="@id/imageView3"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="40dp"
+        android:background="@drawable/shape"
+        android:ems="10"
+        android:fontFamily="@font/text_me_one"
+        android:hint="@string/describa_su_metabolismo"
+        android:inputType="textMultiLine"
+        android:textColorHint="@color/txtinput"
+        android:textSize="15dp" />
+
+    <Button
+        android:id="@+id/btnRRegistrar"
+        android:layout_width="154dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_below="@+id/txtPassword"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/shape2"
+        android:text="@string/registrar"
+        android:textColor="@color/purple_200" />
+
+</LinearLayout>

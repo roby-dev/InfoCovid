@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.triaje.fragment_triaje2">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
+            android:background="@drawable/register">
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginLeft="270dp"
+                android:layout_marginTop="20dp"
+                android:contentDescription="@string/logo_infocovid"
+                android:src="@drawable/covid" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:fontFamily="@font/text_me_one"
+                android:text="@string/triaje"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textColor="@color/purple_200"
+                android:textSize="55dp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/ingresa_tu_documento_de_identidad_para_iniciar_la_autoevaluaci_n"
+            android:textAlignment="center"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="10dp"
+            android:paddingRight="10dp"
+            android:text="@string/todos_los_datos_correctos"
+            android:textAlignment="textEnd"
+            android:textSize="13dp" />
+
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:paddingLeft="20dp"
+            android:text="@string/nacionalidad"
+            android:textAlignment="textStart"
+            android:textSize="15dp" />
+
+        <EditText
+
+            android:id="@+id/txtNacionalidad"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginLeft="40dp"
+            android:background="@drawable/shape4"
+            android:ems="10"
+            android:hint="@string/nacionalidad"
+            android:inputType="text"
+            android:textColorHint="@color/txtinput"
+            android:textSize="15dp" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:paddingLeft="20dp"
+            android:text="@string/tipo_de_documentaci_n"
+            android:textAlignment="textStart"
+            android:textSize="15dp" />
+
+        <EditText
+            android:id="@+id/txtDocumentacion"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+
+            android:layout_marginRight="40dp"
+            android:layout_marginLeft="40dp"
+            android:background="@drawable/shape4"
+
+            android:ems="10"
+            android:hint="@string/tipo_de_documentaci_n"
+            android:inputType="text"
+            android:textColorHint="@color/txtinput"
+            android:textSize="15dp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:paddingLeft="20dp"
+            android:text="@string/fecha_de_nacimiento"
+            android:textAlignment="textStart"
+            android:textSize="15dp" />
+        <EditText
+            android:id="@+id/txtFechaNacimiento"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginLeft="40dp"
+            android:background="@drawable/shape4"
+            android:ems="10"
+            android:hint="@string/fecha_de_nacimiento"
+            android:inputType="date"
+            android:textColorHint="@color/txtinput"
+            android:textSize="15dp" />
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnContinuarTriaje"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtPassword"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/shape3"
+        android:layout_alignParentBottom="true"
+        android:enabled="false"
+        android:text="Continuar"
+        android:textColor="@color/purple_200" />
+
+
+</RelativeLayout>
+
+

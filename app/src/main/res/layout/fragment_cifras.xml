@@ -1,0 +1,446 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.cifras.CifrasFragment">
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="150dp"
+        android:background="@drawable/register">
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="260dp"
+            android:contentDescription="@string/logo_infocovid"
+            android:src="@drawable/covid"  />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="53dp"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:fontFamily="@font/text_me_one"
+            android:text="@string/cifras"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textColor="@color/purple_200"
+            android:textSize="55dp"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/txtCountry"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:textAlignment="center"
+            android:layout_marginBottom="10dp"
+            android:textSize="20dp"
+            android:textColor="@color/purple_200"
+            android:text=""/>
+
+    </RelativeLayout>
+            <AutoCompleteTextView
+                android:id="@+id/atCountries"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Ingrese país"
+                android:completionHint="Seleccione país"
+                android:completionThreshold="1"
+                android:dropDownAnchor="@id/atCountries"
+                android:layout_margin="15dp"
+                />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="10dp">
+                <ProgressBar
+                    android:id="@+id/pTotalCasos"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    style="@style/CircularDeterminateProgressBar"
+                    android:progressDrawable="@drawable/gradient_progress"
+                    tools:progress="60"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_toRightOf="@+id/pTotalCasos"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="20dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/casos_confirmados"
+                        android:textColor="@color/cciudadano"
+                        android:textSize="18dp"/>
+
+                    <TextView
+                        android:id="@+id/txtTotalCases"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:text="+0"
+                        android:textSize="15dp" />
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_marginLeft="110dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/covid" />
+                <ImageButton
+                    android:scaleType="center"
+                    android:background="@null"
+                    android:layout_alignParentRight="true"
+                    android:layout_width="20dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/rowright"
+                    android:layout_marginLeft="20dp"/>
+
+            </RelativeLayout>
+
+
+
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="10dp">
+                <ProgressBar
+                    android:id="@+id/pCasosNuevos"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    style="@style/CircularDeterminateProgressBar"
+                    android:progressDrawable="@drawable/gradient_progress"
+                    tools:progress="60"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_toRightOf="@+id/pCasosNuevos"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="20dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/casos_nuevos"
+                        android:textColor="@color/cnuevos"
+                        android:textSize="18dp"/>
+                    <TextView
+                        android:id="@+id/txtNewCases"
+                        android:layout_width="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_height="wrap_content"
+                        android:text="+0"
+                        android:textSize="15dp"/>
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_marginLeft="110dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/covid" />
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="10dp"
+               >
+                <ProgressBar
+                    android:id="@+id/pRecuperadas"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    style="@style/CircularDeterminateProgressBar"
+                    android:progressDrawable="@drawable/gradient_progress"
+                    tools:progress="60"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/pRecuperadas"
+                    android:layout_gravity="center"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="20dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/personas_recuperadas"
+                        android:textColor="@color/crecuperadas"
+                        android:textSize="18dp"/>
+                    <TextView
+                        android:id="@+id/txtRecovered"
+                        android:layout_width="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_height="wrap_content"
+                        android:text="+0"
+                        android:textSize="15dp"/>
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_marginLeft="110dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/covid" />
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="10dp"
+                >
+                <ProgressBar
+                    android:id="@+id/pRecuperadasHoy"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    style="@style/CircularDeterminateProgressBar"
+                    android:progressDrawable="@drawable/gradient_progress"
+                    tools:progress="60"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_toRightOf="@id/pRecuperadasHoy"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="20dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/personas_recuperadas_hoy"
+                        android:textColor="@color/chospitalizados"
+                        android:textSize="18dp"/>
+                    <TextView
+                        android:id="@+id/txtRecoveredToday"
+                        android:layout_width="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_height="wrap_content"
+                        android:text="+0"
+                        android:textSize="15dp"/>
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_marginLeft="110dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/covid" />
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="10dp"
+                >
+                <ProgressBar
+                    android:id="@+id/pTotalDeaths"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    style="@style/CircularDeterminateProgressBar"
+                    android:progressDrawable="@drawable/gradient_progress"
+                    tools:progress="60"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/pTotalDeaths"
+                    android:layout_gravity="center"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="20dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/personas_fallecidas"
+                        android:textColor="@color/cciudadano"
+                        android:textSize="18dp"/>
+                    <TextView
+                        android:id="@+id/txtDeaths"
+                        android:layout_width="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_height="wrap_content"
+                        android:text="+0"
+                        android:textSize="15dp"/>
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_marginLeft="110dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/covid" />
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="10dp"
+                >
+                <ProgressBar
+                    android:id="@+id/pFallecidosHoy"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    style="@style/CircularDeterminateProgressBar"
+                    android:progressDrawable="@drawable/gradient_progress"
+                    tools:progress="60"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/pFallecidosHoy"
+                    android:layout_gravity="center"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="20dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/personas_fallecidas_hoy"
+                        android:textColor="@color/cfallecidos"
+                        android:textSize="18dp"/>
+                    <TextView
+                        android:id="@+id/txtTodayDeaths"
+                        android:layout_width="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_height="wrap_content"
+                        android:text="+0"
+                        android:textSize="15dp"/>
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_marginLeft="110dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/covid" />
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="10dp">
+                <ProgressBar
+                    android:id="@+id/pNegative"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    style="@style/CircularDeterminateProgressBar"
+                    android:progressDrawable="@drawable/gradient_progress"
+                    tools:progress="60"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/pNegative"
+                    android:layout_gravity="center"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Casos negativos"
+                        android:textColor="@color/crecuperadas"
+                        android:textSize="18dp"/>
+                    <TextView
+                        android:id="@+id/txtNegative"
+                        android:layout_width="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_height="wrap_content"
+                        android:text="+0"
+                        android:textSize="15dp"/>
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_marginLeft="110dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/covid" />
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="10dp">
+                <ProgressBar
+                    android:id="@+id/pMuestras"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    style="@style/CircularDeterminateProgressBar"
+                    android:progressDrawable="@drawable/gradient_progress"
+                    tools:progress="60"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/pMuestras"
+                    android:layout_gravity="center"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/muestras_procesadas"
+                        android:textColor="@color/cciudadano"
+                        android:textSize="18dp"/>
+                    <TextView
+                        android:id="@+id/txtTotal"
+                        android:layout_width="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_height="wrap_content"
+                        android:text="+0"
+                        android:textSize="15dp"/>
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_marginLeft="110dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/covid" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>

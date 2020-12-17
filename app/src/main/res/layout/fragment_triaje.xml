@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.triaje.TriajeFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
+            android:background="@drawable/register">
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginLeft="270dp"
+                android:layout_marginTop="20dp"
+                android:contentDescription="@string/logo_infocovid"
+                android:src="@drawable/covid" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:fontFamily="@font/text_me_one"
+                android:text="@string/triaje"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textColor="@color/purple_200"
+                android:textSize="55dp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/antes_de_empezar_verifica_que_no_sea_una_emergencia"
+            android:textAlignment="center"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="10dp"
+            android:text="@string/llamar_al_106_o_al_117_si_tienes_alguno_de_estos_sintomas"
+            android:textAlignment="center"
+            android:textSize="13dp" />
+
+        <CheckBox
+            android:id="@+id/cb_t_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="10dp"
+            android:text="@string/sesaci_n_de_falta_de_aire_o_dificultad_para_respirar_en_reposo"
+            android:textColor="@color/title"
+            android:textSize="14dp" />
+
+        <CheckBox
+            android:id="@+id/cb_t_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
+            android:text="@string/desorientaci_n_o_confusi_n"
+            android:textColor="@color/title"
+            android:textSize="14dp" />
+
+        <CheckBox
+            android:id="@+id/cb_t_3"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
+            android:text="@string/fiebre_mayor_a_38_persistente_por_m_s_de_2_d_as"
+            android:textColor="@color/title"
+            android:textSize="14dp" />
+
+        <CheckBox
+            android:id="@+id/cb_t_4"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
+            android:text="@string/dolor_de_pecho"
+            android:textColor="@color/title"
+            android:textSize="14dp" />
+
+        <CheckBox
+            android:id="@+id/cb_t_5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
+            android:text="Coloración azul en los labios, manos o pies"
+            android:textColor="@color/title"
+            android:textSize="14dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
+            android:text="*Seleccionar más de 2 síntomas para continuar"
+            android:textAlignment="center"
+            android:textSize="15dp" />
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnContinuarTriaje"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtPassword"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/shape3"
+        android:enabled="false"
+        android:text="Continuar"
+        android:textColor="@color/purple_200" />
+
+</RelativeLayout>
+
+

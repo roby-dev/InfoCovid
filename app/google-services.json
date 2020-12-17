@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "690656374239",
+    "firebase_url": "https://infocovid-46e66.firebaseio.com",
+    "project_id": "infocovid-46e66",
+    "storage_bucket": "infocovid-46e66.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:690656374239:android:570169ac8c2ad05ecde86a",
+        "android_client_info": {
+          "package_name": "com.example.infocovid_proyecto"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "690656374239-jb1illupb3ag5jb2qm2rf57f5thk4mbm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAEKVon8bw4-AnYCVu3Vnl7M6LPfsBsa08"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "690656374239-jb1illupb3ag5jb2qm2rf57f5thk4mbm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

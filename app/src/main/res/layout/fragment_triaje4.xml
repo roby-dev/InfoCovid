@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.triaje.TriajeFragment4">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
+            android:background="@drawable/register">
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginLeft="270dp"
+                android:layout_marginTop="20dp"
+                android:contentDescription="@string/logo_infocovid"
+                android:src="@drawable/covid" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:fontFamily="@font/text_me_one"
+                android:text="@string/triaje"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textColor="@color/purple_200"
+                android:textSize="55dp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/ingrese_tu_direcci_n"
+            android:textAlignment="center"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="10dp"
+            android:paddingRight="10dp"
+            android:text="@string/direc_muestra"
+            android:textAlignment="textEnd"
+            android:textSize="13dp" />
+
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:paddingLeft="20dp"
+            android:text="@string/regi_n"
+            android:textAlignment="textStart"
+            android:textSize="15dp" />
+
+        <EditText
+
+            android:id="@+id/txtTRegion"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginLeft="40dp"
+            android:background="@drawable/shape4"
+            android:ems="10"
+            android:hint="@string/regi_n"
+            android:inputType="text"
+            android:textColorHint="@color/txtinput"
+            android:textSize="15dp" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:paddingLeft="20dp"
+            android:text="@string/provincia"
+            android:textAlignment="textStart"
+            android:textSize="15dp" />
+
+        <EditText
+            android:id="@+id/txtTProvincia"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+
+            android:layout_marginRight="40dp"
+            android:layout_marginLeft="40dp"
+            android:background="@drawable/shape4"
+
+            android:ems="10"
+            android:hint="@string/provincia"
+            android:inputType="text"
+            android:textColorHint="@color/txtinput"
+            android:textSize="15dp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:paddingLeft="20dp"
+            android:text="@string/distrito"
+            android:textAlignment="textStart"
+            android:textSize="15dp" />
+        <EditText
+            android:id="@+id/txtTDistrito"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginLeft="40dp"
+            android:background="@drawable/shape4"
+            android:ems="10"
+            android:hint="@string/distrito"
+            android:inputType="text"
+            android:textColorHint="@color/txtinput"
+            android:textSize="15dp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:paddingLeft="20dp"
+            android:text="@string/direcci_n"
+            android:textAlignment="textStart"
+            android:textSize="15dp" />
+        <EditText
+            android:id="@+id/txtTDirección"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginLeft="40dp"
+            android:background="@drawable/shape4"
+            android:ems="10"
+            android:hint="@string/direcci_n"
+            android:inputType="text"
+            android:textColorHint="@color/txtinput"
+            android:textSize="15dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="20dp"
+            android:text="Ubicación"
+            android:textAlignment="textStart"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <com.google.android.gms.maps.MapView
+            android:id="@+id/tMap"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_margin="20dp" />
+
+        <Button
+            android:id="@+id/btnSetUbication"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/shape3"
+            android:layout_alignParentBottom="true"
+            android:enabled="true"
+            android:text="@string/guardar_ubicaci_n"
+            android:textColor="@color/purple_200" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="5dp"
+            android:paddingLeft="10dp"
+            android:text="@string/si_ingresas_informaci_n_falsa_ser_s_sancionado"
+            android:textColor="@color/cciudadano"
+            android:textAlignment="center"
+            android:textSize="15dp" />
+
+        <Button
+            android:id="@+id/btnConfirmar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/shape3"
+            android:layout_alignParentBottom="true"
+            android:enabled="false"
+            android:text="Confirmar"
+            android:textColor="@color/purple_200" />
+
+    </LinearLayout>
+
+</ScrollView>
+
+
