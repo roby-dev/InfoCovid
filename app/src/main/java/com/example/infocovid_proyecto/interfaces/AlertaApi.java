@@ -1,6 +1,8 @@
 package com.example.infocovid_proyecto.interfaces;
 
 import com.example.infocovid_proyecto.models.Alertas;
+import com.example.infocovid_proyecto.models.Ciudad;
+import com.example.infocovid_proyecto.models.Noticia;
 import com.google.gson.JsonElement;
 
 import java.util.List;
@@ -17,4 +19,7 @@ public interface AlertaApi {
 
     @GET("v3/covid-19/countries/{country}?yesterday=true")
     public Call<Alertas> getBy(@Path("country") String country);
+
+    @GET("{id}")
+    public Call<Ciudad> getCiudad(@Path("id") String ciudad);
 }

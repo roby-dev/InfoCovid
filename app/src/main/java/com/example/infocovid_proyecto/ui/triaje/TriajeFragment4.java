@@ -76,6 +76,7 @@ public class TriajeFragment4 extends Fragment implements OnMapReadyCallback {
                              Bundle savedInstanceState) {
         View vista = inflater.inflate(R.layout.fragment_triaje4, container, false);
         settings(vista,savedInstanceState);
+        MainActivity.navigationView.setCheckedItem(R.id.nav_triaje);
         return vista;
     }
 
@@ -111,7 +112,6 @@ public class TriajeFragment4 extends Fragment implements OnMapReadyCallback {
                 user.setProvincia(txtProvincia.getText().toString());
                 user.setDistrito(txtDistrito.getText().toString());
                 user.setDireccion(txtDireccion.getText().toString());
-
                 mDatabase = FirebaseDatabase.getInstance().getReference();
                 String userID = users.getUid();
                 mDatabase.child("Users").child(userID).setValue(MainActivity.user);

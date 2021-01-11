@@ -40,7 +40,11 @@
                 android:textStyle="bold" />
 
         </RelativeLayout>
-
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="5dp">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -121,9 +125,10 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="10dp"
-            android:text="*Seleccionar más de 2 síntomas para continuar"
+            android:text="@string/select"
             android:textAlignment="center"
             android:textSize="15dp" />
+        </LinearLayout>
 
 
     </LinearLayout>
@@ -140,7 +145,7 @@
         android:layout_marginBottom="10dp"
         android:background="@drawable/shape3"
         android:enabled="false"
-        android:text="Continuar"
+        android:text="@string/continuar"
         android:textColor="@color/purple_200" />
 
 </RelativeLayout>

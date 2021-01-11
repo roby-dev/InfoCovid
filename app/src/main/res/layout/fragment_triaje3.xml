@@ -142,13 +142,38 @@
                 android:layout_marginRight="20dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Masculino"/>
+                android:text="@string/masculino"/>
             <RadioButton
                 android:id="@+id/rbFemenino"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Femenino"/>
+                android:text="@string/femenino"/>
         </RadioGroup>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:paddingLeft="25dp"
+            android:text="@string/describa_su_metabolismo"
+            android:textAlignment="textStart"
+            android:textSize="15dp" />
+
+        <EditText
+            android:id="@+id/txtTDescripcion"
+            android:layout_width="match_parent"
+            android:layout_height="110dp"
+            android:layout_below="@id/imageView3"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="40dp"
+            android:background="@drawable/shape"
+            android:ems="10"
+            android:hint="@string/describa_su_metabolismo"
+            android:inputType="textMultiLine"
+            android:textColorHint="@color/txtinput"
+            android:textSize="15dp" />
+
 
         <View
             android:layout_width="match_parent"
@@ -300,7 +325,7 @@
             android:background="@drawable/shape3"
             android:layout_alignParentBottom="true"
             android:enabled="false"
-            android:text="Continuar"
+            android:text="@string/continuar"
             android:textColor="@color/purple_200" />
 
 

@@ -93,4 +93,85 @@
     <string name="direcci_n">Dirección</string>
     <string name="ingrese_tu_direcci_n">Ingrese tu Dirección</string>
     <string name="guardar_ubicaci_n">Guardar ubicación</string>
+    <string name="presione_para_seleccionar_su_imagen">Presione para seleccionar su imagen</string>
+    <string name="mensajeTriaje">Gracias por completar el registro, gracias a eso, tendremos conocimiento sobre su caso y podremos hacerle el seguimiento respectivo</string>
+    <string name="triajeTitle">Triaje finalizado</string>
+    <string name="fallecidos">Fallecidos</string>
+    <string name="confirmados">Confirmados</string>
+    <string name="ciudad">Ciudad</string>
+    <string name="letalidad">Letalidad</string>
+    <string name="pcr">PCR(+)</string>
+    <string name="pr">PR(+)</string>
+    <string name="inicio">Inicio</string>
+    <string name="hola">Hola, </string>
+    <string name="observe_infectados">Observe Infectados</string>
+    <string name="select">*Seleccionar más de 2 síntomas para continuar</string>
+    <string name="continuar">Continuar</string>
+    <string name="masculino">Masculino</string>
+    <string name="femenino">Femenino</string>
+    <string name="ubicaci_n">Ubicación</string>
+    <string name="confirmar">Confirmar</string>
+    <string name="s_ntomas">Síntomas</string>
+    <string name="marca_tus_s_ntomas_si_no_tienes_ninguno_marca_la_opcion_no_tengo_ning_n_s_ntoma">Marca tus síntomas. Si no tienes ninguno, no marques alguna opción</string>
+    <string name="ingrese_pa_s">Ingrese país</string>
+    <string name="regresar">Regresar</string>
+    <string name="actualizar">Actualizar</string>
+    <string name="ingrese_distrito">Ingrese distrito</string>
+    <string name="cargando">Cargando países</string>
+    <string name="cargando_cifras">Cargando cifras...</string>
+    <string name="enter_city">Ingrese una ciudad</string>
+    <string name="casos_negativos">Casos negativos</string>
+    <string name="olvid_su_contrase_a">¿Olvidó su contraseña?</string>
+    <string name="bye">Esperamos regreses pronto</string>
+    <string name="idioma">Seleccione idioma</string>
+    <string name="noticias_m_s_relevantes">Principales Titulares</string>
+    <string name="bienvenido_mapas">Bienvenido a Mapas-Infocovid</string>
+    <string name="select_map">Puedes seleccionar ver cifras en el mundo o alertas registradas por los usuarios</string>
+
+    <string-array name="ciudades">
+        <item>AMAZONAS</item>
+        <item>ANCASH</item>
+        <item>APURIMAC</item>
+        <item>AREQUIPA</item>
+        <item>AYACUCHO</item>
+        <item>CAJAMARCA</item>
+        <item>CALLAO</item>
+        <item>CUSCO</item>
+        <item>HUANCAVELICA</item>
+        <item>HUANUCO</item>
+        <item>ICA</item>
+        <item>JUNIN</item>
+        <item>LA LIBERTAD</item>
+        <item>LAMBAYEQUE</item>
+        <item>LIMA</item>
+        <item>LORETO</item>
+        <item>MADRE DE DIOS</item>
+        <item>MOQUEGUA</item>
+        <item>PASCO</item>
+        <item>PIURA</item>
+        <item>PUNO</item>
+        <item>SAN MARTIN</item>
+        <item>TACNA</item>
+        <item>TUMBES</item>
+        <item>UCAYALI</item>
+    </string-array>
+
+    <string-array name="distritos">
+        <item>ALTO DE LA ALIANZA</item>
+        <item>CALANA</item>
+        <item>CIUDAD NUEVA</item>
+        <item>CORONEL GREGORIO ALBARACCIN LANCHIPA</item>
+        <item>INCLAN</item>
+        <item>LA YARADA DE LOS PALOS</item>
+        <item>PACHIA</item>
+        <item>PALCA</item>
+        <item>POCOLLAY</item>
+        <item>SAMA</item>
+        <item>TACNA</item>
+    </string-array>
+
+    <string-array name="opciones">
+        <item>Español</item>
+        <item>Inglés</item>
+    </string-array>
 </resources>

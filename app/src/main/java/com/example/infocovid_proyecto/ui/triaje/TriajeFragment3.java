@@ -28,8 +28,8 @@ public class TriajeFragment3 extends Fragment {
     public static EditText txtEmai;
     public static EditText txtNombresFamiliar;
     public static EditText txtCelularFamiliar;
+    public static EditText txtDescripcion;
     Button btnContinuar;
-
 
     private boolean txt1=false;
     private boolean txt2=false;
@@ -46,6 +46,7 @@ public class TriajeFragment3 extends Fragment {
         View vista = inflater.inflate(R.layout.fragment_triaje3, container, false);
         settings(vista);
         listener(savedInstanceState);
+        MainActivity.navigationView.setCheckedItem(R.id.nav_triaje);
         return vista;
     }
 
@@ -77,6 +78,8 @@ public class TriajeFragment3 extends Fragment {
     }
 
     private void settings(View vista) {
+
+        txtDescripcion =(EditText)vista.findViewById(R.id.txtTDescripcion);
         txtNombres=(EditText)vista.findViewById(R.id.txtTNombres);
         txtApellidos=(EditText)vista.findViewById(R.id.txtTApellidos);
         rbMasculino=(RadioButton)vista.findViewById(R.id.rbMasculino);
@@ -96,6 +99,7 @@ public class TriajeFragment3 extends Fragment {
         }
         txtCelular.setText(MainActivity.user.getCelular());
         txtEmai.setText(MainActivity.user.getEmail());
+        txtDescripcion.setText(MainActivity.user.getDescription());
         txtNombresFamiliar.setText(MainActivity.user.getFamiliar());
         txtCelularFamiliar.setText(MainActivity.user.getFamiliarTelefono());
 

@@ -7,18 +7,22 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AutoCompleteTextView;
+import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.infocovid_proyecto.MainActivity;
 import com.example.infocovid_proyecto.NetUtilities;
 import com.example.infocovid_proyecto.R;
+import com.example.infocovid_proyecto.ui.triaje.TriajeFragment5;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -29,6 +33,7 @@ import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 import java.util.concurrent.ExecutionException;
 
 public class CifrasFragment extends Fragment {
@@ -45,11 +50,33 @@ public class CifrasFragment extends Fragment {
     public static Country country;
     private CountryAdapter mAdapter;
     private List<Country> listCountrys = new ArrayList<>();
+    private ImageButton ib;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         View view = inflater.inflate(R.layout.fragment_cifras,container,false);
+
+        setting(view);
+
+        ib.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                CifrasPeruFragment fr = new CifrasPeruFragment();
+                fr.setArguments(savedInstanceState);
+                getActivity().getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.nav_host_fragment,fr)
+                        .addToBackStack(null)
+                        .commit();
+            }
+        });
+
+        MainActivity.navigationView.setCheckedItem(R.id.nav_cifras);
+        return view;
+    }
+
+    private void setting(View view) {
         progressTotal=(ProgressBar)view.findViewById(R.id.pTotalCasos);
         progressNuevos=(ProgressBar)view.findViewById(R.id.pCasosNuevos);
         progressProcesadas=(ProgressBar)view.findViewById(R.id.pMuestras);
@@ -58,9 +85,7 @@ public class CifrasFragment extends Fragment {
         progressFallecidos=(ProgressBar)view.findViewById(R.id.pTotalDeaths);
         progressFallecidosHoy=(ProgressBar)view.findViewById(R.id.pFallecidosHoy);
         progressNegative=(ProgressBar)view.findViewById(R.id.pNegative);
-
-
-        return view;
+        ib= (ImageButton)view.findViewById(R.id.ibCasosConfirmados);
     }
 
     public void getCountries(){
@@ -74,8 +99,10 @@ public class CifrasFragment extends Fragment {
         if(listCountrys.size()<=0){
             AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
             builder.setTitle("");
-            builder.setMessage("Cargando países");
+            builder.setMessage(R.string.cargando);
             dialog= builder.create();
+            dialog.setCanceledOnTouchOutside(false);
+            dialog.setCancelable(false);
             dialog.show();
             getCountries();
         }else{
@@ -91,15 +118,15 @@ public class CifrasFragment extends Fragment {
                         getNumbers(country.getCountry());
                         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
                         builder.setTitle("");
-                        builder.setMessage("Cargando cifras...");
+                        builder.setMessage(R.string.cargando_cifras);
                         dialog= builder.create();
+                        dialog.setCanceledOnTouchOutside(false);
+                        dialog.setCancelable(false);
                         dialog.show();
                     }
                 }
             });
         }
-
-
     }
 
     public void getNumbers(String country){
@@ -181,6 +208,12 @@ public class CifrasFragment extends Fragment {
                 txtFallecidos.setText("+ "+formatter.format(country.getDeaths()));
                 txtFallecidosHoy.setText("+ "+formatter.format(country.getTodayDeaths()));
 
+                if(country.getCountry().equals("Peru")){
+                    ib.setVisibility(View.VISIBLE);
+                }else{
+                    ib.setVisibility(View.INVISIBLE);
+                }
+
             } catch (JSONException e){
                 e.printStackTrace();
                 Toast.makeText(getContext(), "Problemas internos, espere...", Toast.LENGTH_SHORT).show();
@@ -218,7 +251,7 @@ public class CifrasFragment extends Fragment {
                                 getNumbers(country.getCountry());
                                 AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
                                 builder.setTitle("");
-                                builder.setMessage("Cargando cifras...");
+                                builder.setMessage(getString(R.string.cargando_cifras));
                                 dialog= builder.create();
                                 dialog.show();
                             }

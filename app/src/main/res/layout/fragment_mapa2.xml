@@ -1,40 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<LinearLayout xmlns:tools="http://schemas.android.com/tools"
     android:layout_height="match_parent"
     android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="150dp"
+        android:background="@drawable/register">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:orientation="vertical"
-        android:layout_gravity="center">
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginLeft="270dp"
+            android:layout_marginTop="20dp"
+            android:contentDescription="@string/logo_infocovid"
+            android:src="@drawable/covid" />
 
         <TextView
-            android:layout_width="match_parent"
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="Observe Infectados"
-            android:textAlignment="center"
-            android:textColor="@color/txtinput"
-            android:textSize="20dp" />
-        <EditText
-            android:layout_width="match_parent"
-            android:padding="20dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="60dp"
-            android:layout_marginRight="60dp"
-            android:layout_height="30dp"
-            android:textColor="@color/txtinput"/>
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:fontFamily="@font/text_me_one"
+            android:text="@string/mapa"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textColor="@color/purple_200"
+            android:textSize="55dp"
+            android:textStyle="bold" />
 
-    </LinearLayout>
+    </RelativeLayout>
+   <AutoCompleteTextView
+       android:id="@+id/atMapa"
+       android:layout_width="match_parent"
+       android:layout_marginTop="10dp"
+       android:layout_marginRight="30dp"
+       android:layout_marginLeft="30dp"
+       android:completionHint="@string/ingrese_distrito"
+       android:hint="@string/ingrese_distrito"
+       android:layout_height="wrap_content"/>
 
-    <com.google.android.gms.maps.MapView xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_marginTop="20dp"
-        android:id="@+id/map"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_marginTop="5dp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-       />
+        android:layout_height="match_parent">
+
+        <com.google.android.gms.maps.MapView
+            android:id="@+id/map"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="16dp" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="24dp"
+            android:id="@+id/fbShow"
+            android:clickable="true"
+            android:focusable="true"
+            android:tint="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:src="@drawable/ic_baseline_add_24"/>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fbAlerts"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:clickable="true"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@+id/fbShow"
+            app:layout_constraintEnd_toEndOf="@+id/fbShow"
+            app:srcCompat="@drawable/alertas" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fbCases"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:clickable="true"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@+id/fbAlerts"
+            app:layout_constraintEnd_toEndOf="@+id/fbAlerts"
+            app:srcCompat="@drawable/cifras" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>

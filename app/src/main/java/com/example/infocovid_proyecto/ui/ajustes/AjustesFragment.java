@@ -3,25 +3,35 @@ package com.example.infocovid_proyecto.ui.ajustes;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.drawable.RoundedBitmapDrawable;
+import androidx.core.graphics.drawable.RoundedBitmapDrawableFactory;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.infocovid_proyecto.MainActivity;
 import com.example.infocovid_proyecto.R;
 import com.example.infocovid_proyecto.libraries.CircleTransform;
 import com.example.infocovid_proyecto.models.User;
+import com.example.infocovid_proyecto.ui.inicio.InicioFragment;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -51,7 +61,11 @@ public class AjustesFragment extends Fragment {
     private Uri imageUri;
     private DatabaseReference mDatabase;
     private static String link ="";
-
+    private Bundle saved;
+    private EditText txtNombres;
+    private EditText txtApellidos;
+    private EditText txtEmail;
+    private EditText txtCelular;
     View view;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -59,12 +73,13 @@ public class AjustesFragment extends Fragment {
         // Inflate the layout for this fragment
        
          view = inflater.inflate(R.layout.fragment_ajustes,container,false);
-
+        saved=savedInstanceState;
         storage = FirebaseStorage.getInstance();
         storageReference = storage.getReference();
         settings(view);
         listeners(savedInstanceState);
 
+        MainActivity.navigationView.setCheckedItem(R.id.nav_ajustes);
 
         return view;
     }
@@ -83,7 +98,34 @@ public class AjustesFragment extends Fragment {
         btnActualizar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                uploadPicture();
+                mDatabase = FirebaseDatabase.getInstance().getReference();
+                FirebaseUser users = FirebaseAuth.getInstance().getCurrentUser();
+                String userID = users.getUid();
+                MainActivity.user.setName(txtNombres.getText().toString());
+                MainActivity.user.setLastname(txtApellidos.getText().toString());
+                MainActivity.user.setCelular(txtCelular.getText().toString());
+
+                mDatabase.child("Users").child(userID).setValue(MainActivity.user);
+                Toast.makeText(getContext(), "Datos actualizados correctamente", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    private void settings(View view) {
+        fotoUsuario = (ImageButton) view.findViewById(R.id.fotoUsuario);
+        txtNombres = (EditText) view.findViewById(R.id.txtANombres);
+        txtApellidos = (EditText)view.findViewById(R.id.txtAApellidos);
+        txtCelular = (EditText)view.findViewById(R.id.txtACelular);
+        txtEmail = (EditText)view.findViewById(R.id.txtAEmail);
+        txtNombres.setText(MainActivity.user.getName());
+        txtApellidos.setText(MainActivity.user.getLastname());
+        txtCelular.setText(MainActivity.user.getCelular());
+        txtEmail.setEnabled(false);
+        txtEmail.setText(MainActivity.user.getEmail());
+        if(MainActivity.user.getImagen().isEmpty()){
+
+        }else{
+            if(!MainActivity.user.getImagen().contains("https")){
                 StorageReference mImageStorage = FirebaseStorage.getInstance().getReference();
                 StorageReference ref = mImageStorage.child("images").child(MainActivity.user.getImagen());
                 ref.getDownloadUrl().addOnCompleteListener(new OnCompleteListener<Uri>() {
@@ -92,21 +134,13 @@ public class AjustesFragment extends Fragment {
                         if(task.isSuccessful()){
                             Uri downUri = task.getResult();
                             String imageUrl = downUri.toString();
-                        }else{
-                            Toast.makeText(getContext(), ""+task.getException(), Toast.LENGTH_SHORT).show();
+                            Picasso.with(getContext()).load(imageUrl).transform(new CircleTransform()).into(fotoUsuario);
                         }
                     }
                 });
+            }else{
+                Picasso.with(getContext()).load(MainActivity.user.getImagen()).transform(new CircleTransform()).into(fotoUsuario);
             }
-        });
-    }
-
-    private void settings(View view) {
-        fotoUsuario = (ImageButton) view.findViewById(R.id.fotoUsuario);
-        if(MainActivity.user.getImagen().isEmpty()){
-
-        }else{
-            Picasso.with(getContext()).load(MainActivity.imageUrl).transform(new CircleTransform()).into(fotoUsuario);
         }
         btnActualizar = (Button)view.findViewById(R.id.btnActualizarImagen);
 
@@ -118,6 +152,8 @@ public class AjustesFragment extends Fragment {
         if(requestCode==GALLERY_INTENT && resultCode == Activity.RESULT_OK){
             imageUri = data.getData();
             fotoUsuario.setImageURI(imageUri);
+            fotoUsuario.setScaleType(ImageView.ScaleType.CENTER_CROP);
+            uploadPicture();
         }
     }
 
@@ -125,38 +161,63 @@ public class AjustesFragment extends Fragment {
         final ProgressDialog pd = new ProgressDialog(getContext());
         pd.setTitle("Subiendo imagen");
         pd.show();
-
+        if(!MainActivity.user.getImagen().isEmpty()){
+            StorageReference ref = storage.getReference();
+            StorageReference deserRef =ref.child("images/"+MainActivity.user.getImagen());
+            deserRef.delete().addOnSuccessListener(new OnSuccessListener<Void>() {
+                @Override
+                public void onSuccess(Void aVoid) {
+                }
+            });
+        }
         final String randomKey= UUID.randomUUID().toString();
+        MainActivity.user.setImagen((randomKey));
         StorageReference riversRef = storageReference.child("images/"+randomKey);
+        try{
+            riversRef.putFile(imageUri)
+                    .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                        @Override
+                        public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                            pd.dismiss();
+                            Toast.makeText(getContext(),"Image Uploaded",Toast.LENGTH_LONG).show();
+                            FirebaseUser users = FirebaseAuth.getInstance().getCurrentUser();
+                            mDatabase = FirebaseDatabase.getInstance().getReference();
+                            String userID = users.getUid();
+                            MainActivity.user.setImagen(randomKey.toString());
+                            mDatabase.child("Users").child(userID).setValue(MainActivity.user);
+                            link = randomKey.toString();
+                            StorageReference mImageStorage = FirebaseStorage.getInstance().getReference();
+                            StorageReference ref = mImageStorage.child("images").child(MainActivity.user.getImagen());
+                            ref.getDownloadUrl().addOnCompleteListener(new OnCompleteListener<Uri>() {
+                                @Override
+                                public void onComplete(@NonNull Task<Uri> task) {
+                                    if(task.isSuccessful()){
+                                        Uri downUri = task.getResult();
+                                        String imageUrl = downUri.toString();
+                                    }else{
+                                        //Toast.makeText(getContext(), ""+task.getException(), Toast.LENGTH_SHORT).show();
+                                    }
+                                }
+                            });
+                        }
+                    })
+                    .addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception exception) {
+                            pd.dismiss();
 
-        riversRef.putFile(imageUri)
-                .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-                    @Override
-                    public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                        pd.dismiss();
-                        Toast.makeText(getContext(),"Image Uploaded",Toast.LENGTH_LONG).show();
+                        }
+                    })
+                    .addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
+                        @Override
+                        public void onProgress(@NonNull UploadTask.TaskSnapshot snapshot) {
+                            double progressPercent = (100.00* snapshot.getBytesTransferred() / snapshot.getTotalByteCount());
+                            pd.setMessage("Procentaje: "+(int) progressPercent +" %");
+                        }
+                    });
+        }catch(Exception e){
 
-                        FirebaseUser users = FirebaseAuth.getInstance().getCurrentUser();
-                                mDatabase = FirebaseDatabase.getInstance().getReference();
-                                String userID = users.getUid();
-                                MainActivity.user.setImagen(randomKey.toString());
-                                mDatabase.child("Users").child(userID).setValue(MainActivity.user);
-                                link = randomKey.toString();
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception exception) {
-                        pd.dismiss();
-                      Toast.makeText(getContext(),"Failed to Upload",Toast.LENGTH_LONG).show();
-                    }
-                })
-        .addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
-            @Override
-            public void onProgress(@NonNull UploadTask.TaskSnapshot snapshot) {
-                double progressPercent = (100.00* snapshot.getBytesTransferred() / snapshot.getTotalByteCount());
-                pd.setMessage("Procentaje: "+(int) progressPercent +" %");
-            }
-        });
+        }
+
     }
 }

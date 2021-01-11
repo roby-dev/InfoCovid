@@ -1,5 +1,6 @@
 package com.example.infocovid_proyecto;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
@@ -21,8 +22,11 @@ import com.example.infocovid_proyecto.models.User;
 import com.example.infocovid_proyecto.ui.ajustes.AjustesFragment;
 import com.example.infocovid_proyecto.ui.alertas.AlertasFragment;
 import com.example.infocovid_proyecto.ui.cifras.CifrasFragment;
+import com.example.infocovid_proyecto.ui.cifras.CifrasPeruFragment;
 import com.example.infocovid_proyecto.ui.home.HomeFragment;
+import com.example.infocovid_proyecto.ui.inicio.InicioFragment;
 import com.example.infocovid_proyecto.ui.mapa.MapaFragment;
+import com.example.infocovid_proyecto.ui.noticias.NoticiasFragment;
 import com.example.infocovid_proyecto.ui.triaje.TriajeFragment;
 import com.facebook.login.LoginManager;
 import com.google.android.gms.maps.SupportMapFragment;
@@ -47,6 +51,8 @@ import com.squareup.picasso.Picasso;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.core.view.GravityCompat;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
@@ -76,9 +82,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public static String imageUrl="";
 
     public static User user;
+    public static NavigationView navigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
 
@@ -88,7 +97,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         setSupportActionBar(toolbar);
 
         drawer = findViewById(R.id.drawer_layout);
-        NavigationView navigationView = findViewById(R.id.nav_view);
+        navigationView = findViewById(R.id.nav_view);
 
         getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment,new HomeFragment()).commit();
         navigationView.setNavigationItemSelectedListener(this);
@@ -135,6 +144,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }
         });
 
+        getSupportActionBar().show();
+        getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment,new InicioFragment()).addToBackStack(null).commit();
+        navigationView.setCheckedItem(R.id.nav_inicio);
+
     }
 
     @Override
@@ -143,14 +156,20 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             drawer.closeDrawer(GravityCompat.START);
         }
         else{
-            super.onBackPressed();
+            Fragment f = getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment);
+            if(f instanceof InicioFragment){
+
+            }else{
+                super.onBackPressed();
+                getFragmentManager().popBackStack();
+            }
         }
     }
+
 
     @Override
     protected void onStart() {
         super.onStart();
-
     }
 
     private void getUserInfo(){
@@ -180,7 +199,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     user.setFechaNacimiento(snapshot.child("fechaNacimiento").getValue().toString());
                     user.setImagen(snapshot.child("imagen").getValue().toString());
                     if(!user.getImagen().isEmpty()){
-                        if(!user.getImagen().contains("/")){
+                        if(!user.getImagen().contains("https")){
                             StorageReference mImageStorage = FirebaseStorage.getInstance().getReference();
                             StorageReference ref = mImageStorage.child("images").child(MainActivity.user.getImagen());
                             ref.getDownloadUrl().addOnCompleteListener(new OnCompleteListener<Uri>() {
@@ -196,9 +215,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                                 }
                             });
                         }
+
                         Picasso.with(MainActivity.this).load(user.getImagen()).transform(new CircleTransform()).into(photoImageView);
                     }
-                    nameTextView.setText(user.getName()+" "+user.getLastname());
+                    if(user.getLastname().isEmpty()){
+                        nameTextView.setText(user.getName());
+                    }else{
+                        nameTextView.setText(user.getLastname()+", "+user.getName());
+                    }
+
                     emailTextView.setText(user.getEmail());
                 }else{
                     FirebaseUser users = mAuth.getCurrentUser();
@@ -219,9 +244,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         MainActivity.user.setImagen(url);
                         mDatabase.child("Users").child(userID).setValue(MainActivity.user);
                         imageUrl=MainActivity.user.getImagen();
-                        Toast.makeText(MainActivity.this, "Logrado", Toast.LENGTH_SHORT).show();
                     }
                 }
+
+                Toast.makeText(MainActivity.this, getString(R.string.hola)+user.getName(), Toast.LENGTH_SHORT).show();
+
             }
 
             @Override
@@ -259,14 +286,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
         switch(item.getItemId()){
-            case R.id.nav_home:
+            case R.id.nav_inicio:
                 getSupportActionBar().show();
-                getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment,new HomeFragment()).addToBackStack(null).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment,new InicioFragment()).addToBackStack(null).commit();
                 break;
 
             case R.id.nav_mapa:
                 getSupportActionBar().hide();
-
                 getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment,new MapaFragment()).addToBackStack(null).commit();
                 break;
 
@@ -276,20 +302,25 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 break;
             case R.id.nav_cifras:
                 getSupportActionBar().hide();
-
                 getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment,new CifrasFragment()).addToBackStack(null).commit();
                 break;
             case R.id.nav_alertas:
+                getSupportActionBar().hide();
                 getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment,new AlertasFragment()).addToBackStack(null).commit();
                 break;
+            case R.id.nav_noticias:
+                getSupportActionBar().hide();
+                getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment,new NoticiasFragment()).addToBackStack(null).commit();
+                break;
             case R.id.nav_ajustes:
+                getSupportActionBar().hide();
                 getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment,new AjustesFragment()).addToBackStack(null).commit();
                 break;
 
             case R.id.nav_cerrar:
                 FirebaseAuth.getInstance().signOut();
                 LoginManager.getInstance().logOut();
-                Toast.makeText(MainActivity.this, "Esperamos regreses pronto", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this,R.string.bye, Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(MainActivity.this,login_activity.class));
                 finish();
                 break;

@@ -145,7 +145,7 @@
         android:background="@drawable/shape3"
         android:layout_alignParentBottom="true"
         android:enabled="false"
-        android:text="Continuar"
+        android:text="@string/continuar"
         android:textColor="@color/purple_200" />
 
 

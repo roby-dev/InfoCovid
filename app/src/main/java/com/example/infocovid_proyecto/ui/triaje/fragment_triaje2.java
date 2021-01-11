@@ -34,6 +34,7 @@ public class fragment_triaje2 extends Fragment {
         View vista = inflater.inflate(R.layout.fragment_triaje2, container, false);
         settings(vista);
         listeners(savedInstanceState);
+        MainActivity.navigationView.setCheckedItem(R.id.nav_triaje);
         return vista;
     }
 

@@ -145,7 +145,7 @@ public class login_activity extends FragmentActivity {
 
             @Override
             public void onCancel() {
-                Toast.makeText(login_activity.this, "User cancelled it", Toast.LENGTH_SHORT).show();
+
             }
 
             @Override
@@ -260,7 +260,7 @@ public class login_activity extends FragmentActivity {
         if(mFireBaseAuth.getCurrentUser().equals(null)){
          Toast.makeText(login_activity.this,"HOLA",Toast.LENGTH_SHORT).show();
         }else{
-            Toast.makeText(login_activity.this, "Bienvenido " + mFireBaseAuth.getCurrentUser().getDisplayName(), Toast.LENGTH_SHORT).show();
+
         }
         startActivity(new Intent(login_activity.this,MainActivity.class));
         finish();

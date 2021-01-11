@@ -4,34 +4,141 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.ajustes.AjustesFragment">
-
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal"
-        android:gravity="center">
+        android:orientation="vertical"
+        >
 
         <ImageButton
-            android:layout_width="250dp"
-            android:layout_height="250dp"
+            android:layout_marginTop="30dp"
+            android:layout_gravity="center"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
             android:scaleType="centerCrop"
             android:background="@drawable/shape_rounded"
             android:id="@+id/fotoUsuario"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/presione_para_seleccionar_su_imagen"
+            android:textAlignment="center"
+            android:textSize="15dp" />
 
+        <View
+            android:layout_width="match_parent"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
+            android:background="#ccc" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:paddingLeft="20dp"
+            android:text="@string/nombres"
+            android:textAlignment="textStart"
+            android:textSize="15dp" />
+
+        <EditText
+            android:id="@+id/txtANombres"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginLeft="40dp"
+            android:background="@drawable/shape4"
+            android:ems="10"
+            android:hint="@string/nombres"
+            android:inputType="text"
+            android:textColorHint="@color/txtinput"
+            android:textSize="15dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:paddingLeft="20dp"
+            android:text="@string/apellidos"
+            android:textAlignment="textStart"
+            android:textSize="15dp" />
+
+        <EditText
+
+            android:id="@+id/txtAApellidos"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginLeft="40dp"
+            android:background="@drawable/shape4"
+            android:ems="10"
+            android:hint="@string/apellidos"
+            android:inputType="text"
+            android:textColorHint="@color/txtinput"
+            android:textSize="15dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:paddingLeft="20dp"
+            android:text="@string/email"
+            android:textAlignment="textStart"
+            android:textSize="15dp" />
+
+        <EditText
+
+            android:id="@+id/txtAEmail"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginLeft="40dp"
+            android:background="@drawable/shape4"
+            android:ems="10"
+            android:hint="@string/email"
+            android:inputType="textEmailAddress"
+            android:textColorHint="@color/txtinput"
+            android:textSize="15dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:paddingLeft="20dp"
+            android:text="@string/celular_o_tel_fono"
+            android:textAlignment="textStart"
+            android:textSize="15dp" />
+
+        <EditText
+
+            android:id="@+id/txtACelular"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginLeft="40dp"
+            android:background="@drawable/shape4"
+            android:ems="10"
+            android:hint="@string/celular_o_tel_fono"
+            android:inputType="text"
+            android:textColorHint="@color/txtinput"
+            android:textSize="15dp" />
+
+        <Button
+            android:id="@+id/btnActualizarImagen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:background="@drawable/shape3"
+            android:layout_alignParentBottom="true"
+            android:enabled="true"
+            android:text="@string/actualizar"
+            android:textColor="@color/purple_200" />
     </LinearLayout>
-
-    <Button
-        android:id="@+id/btnActualizarImagen"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginBottom="10dp"
-        android:background="@drawable/shape3"
-        android:layout_alignParentBottom="true"
-        android:enabled="true"
-        android:text="Actualizar imagen"
-        android:textColor="@color/purple_200" />
-
+</ScrollView>
 </RelativeLayout>

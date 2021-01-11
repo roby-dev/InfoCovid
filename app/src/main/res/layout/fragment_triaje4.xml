@@ -155,7 +155,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             android:layout_marginLeft="20dp"
-            android:text="Ubicación"
+            android:text="@string/ubicaci_n"
             android:textAlignment="textStart"
             android:textSize="20dp"
             android:textStyle="bold" />
@@ -204,7 +204,7 @@
             android:background="@drawable/shape3"
             android:layout_alignParentBottom="true"
             android:enabled="false"
-            android:text="Confirmar"
+            android:text="@string/confirmar"
             android:textColor="@color/purple_200" />
 
     </LinearLayout>

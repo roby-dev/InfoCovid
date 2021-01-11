@@ -9,15 +9,25 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.infocovid_proyecto.MainActivity;
 import com.example.infocovid_proyecto.R;
+import com.example.infocovid_proyecto.models.Triaje;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class TriajeFragment extends Fragment {
 
@@ -27,14 +37,22 @@ public class TriajeFragment extends Fragment {
     public static CheckBox cb3;
     public static CheckBox cb4;
     public static CheckBox cb5;
+    private DatabaseReference mDatabase;
+    public static Triaje triaje;
+
     Button btnContinuar;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
+
         View view = inflater.inflate(R.layout.fragment_triaje,container,false);
         settings(view);
+        contador=0;
         listeners(savedInstanceState);
+        MainActivity.navigationView.setCheckedItem(R.id.nav_triaje);
+        triaje = new Triaje();
         return view;
+
     }
 
     private void listeners(Bundle savedInstanceState) {
@@ -69,7 +87,57 @@ public class TriajeFragment extends Fragment {
         cb3 = (CheckBox)view.findViewById(R.id.cb_t_3);
         cb4 = (CheckBox)view.findViewById(R.id.cb_t_4);
         cb5 = (CheckBox)view.findViewById(R.id.cb_t_5);
+        FirebaseUser users = FirebaseAuth.getInstance().getCurrentUser();
+        String userID = users.getUid();
+        mDatabase = FirebaseDatabase.getInstance().getReference();
+
         checkChanges();
+
+        mDatabase.child("Triaje").child(userID).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if(snapshot.exists()){
+                    int pre1=Integer.parseInt(snapshot.child("pre1").getValue().toString());
+                    int pre2=Integer.parseInt(snapshot.child("pre2").getValue().toString());
+                    int pre3=Integer.parseInt(snapshot.child("pre3").getValue().toString());
+                    int pre4=Integer.parseInt(snapshot.child("pre4").getValue().toString());
+                    int pre5=Integer.parseInt(snapshot.child("pre5").getValue().toString());
+                    if(pre1==1){
+                        cb1.setChecked(true);
+                    }else {
+                        cb1.setChecked(false);
+                    }
+                    if(pre2==1){
+                        cb2.setChecked(true);
+                    }else{
+                        cb2.setChecked(false);
+                    }
+                    if(pre3==1){
+                        cb3.setChecked(true);
+                    }else{
+                        cb3.setChecked(false);
+                    }
+                    if(pre4==1){
+                        cb4.setChecked(true);
+                    }else{
+                        cb4.setChecked(false);
+                    }
+                    if(pre5==1){
+                        cb5.setChecked(true);
+                    }else{
+                        cb5.setChecked(false);
+                    }
+                    btnContinuar.setText(R.string.actualizar);
+                }else{
+
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
     }
 
     private void checkChanges() {
@@ -78,7 +146,9 @@ public class TriajeFragment extends Fragment {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if(isChecked){
                     contador++;
+                    triaje.setPre1(1);
                 }else{
+                    triaje.setPre1(0);
                     contador--;
                 }
                 if(contador>=2){
@@ -92,8 +162,10 @@ public class TriajeFragment extends Fragment {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if(isChecked){
+                    triaje.setPre2(1);
                     contador++;
                 }else{
+                    triaje.setPre2(0);
                     contador--;
                 }
                 if(contador>=2){
@@ -108,7 +180,9 @@ public class TriajeFragment extends Fragment {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if(isChecked){
                     contador++;
+                    triaje.setPre3(1);
                 }else{
+                    triaje.setPre3(0);
                     contador--;
                 }
                 if(contador>=2){
@@ -122,8 +196,10 @@ public class TriajeFragment extends Fragment {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if(isChecked){
+                    triaje.setPre4(1);
                     contador++;
                 }else{
+                    triaje.setPre4(0);
                     contador--;
                 }
                 if(contador>=2){
@@ -137,8 +213,10 @@ public class TriajeFragment extends Fragment {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if(isChecked){
+                    triaje.setPre5(1);
                     contador++;
                 }else{
+                    triaje.setPre5(0);
                     contador--;
                 }
                 if(contador>=2){
