@@ -3,6 +3,18 @@ package com.example.infocovid_proyecto.models;
 public class Country {
     private String country;
     private String flag;
+    private int totalCases;
+    private int negativeCases;
+    private int casesConfirmed;
+    private int todayCases;
+    private int deaths;
+    private int todayDeaths;
+    private String letal;
+    private int recovered;
+    private int recoveredToday;
+    private int critical;
+
+
     public Country(String country, int totalCases, int negativeCases, int casesConfirmed, int todayCases, int deaths, int todayDeaths, String letal, int recovered, int recoveredToday, int critical,String flag) {
         this.country = country;
         this.totalCases = totalCases;
@@ -22,14 +34,6 @@ public class Country {
         this.country = country;
         this.flag=flag;
     }
-
-    private int totalCases;
-    private int negativeCases;
-    private int casesConfirmed;
-    private int todayCases;
-    private int deaths;
-    private int todayDeaths;
-    private String letal;
 
 
     public String getFlag() {
@@ -127,12 +131,5 @@ public class Country {
     public void setCritical(int critical) {
         this.critical = critical;
     }
-
-    private int recovered;
-    private int recoveredToday;
-    private int critical;
-
-
-
 
 }
