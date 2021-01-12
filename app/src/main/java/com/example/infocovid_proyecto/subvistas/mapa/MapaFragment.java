@@ -50,15 +50,12 @@ import java.util.List;
 public class MapaFragment extends Fragment implements OnMapReadyCallback {
 
     private GoogleMap mMap;
-    private static final String TAG = "Estilo del mapa";
     private static final int REQUEST_LOCATION_PERMISSION = 1;
-    View rootView;
     private DatabaseReference mDatabase;
     private MapView mapView;
     private List<User> usuarios = new ArrayList<>();
     private AutoCompleteTextView atDistrito;
     public static List<Alertas> alertas = MainActivity.alertas;
-    public final int index = alertas.size();
     private static Context context;
     FloatingActionButton fbShow,fbAlert,fbCases;
     private AnimationUtils animationUtils;

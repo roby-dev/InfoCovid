@@ -13,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.example.infocovid_proyecto.R;
+import com.example.infocovid_proyecto.models.Country;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -20,7 +21,6 @@ import java.util.List;
 
 public class CountryAdapter extends ArrayAdapter<Country> {
 
-    private Country countryEntry;
     private TextView autoItem;
     private ImageView countryIcon;
     private List<Country> countryEntryList = new ArrayList<Country>();

@@ -1,4 +1,4 @@
-package com.example.infocovid_proyecto.subvistas.cifras;
+package com.example.infocovid_proyecto.models;
 
 public class Country {
     private String country;

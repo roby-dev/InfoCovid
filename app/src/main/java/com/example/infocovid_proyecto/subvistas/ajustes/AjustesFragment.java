@@ -40,7 +40,6 @@ import java.util.UUID;
 
 public class AjustesFragment extends Fragment {
 
-
     private Button btnActualizar;
     private ImageButton fotoUsuario;
     private StorageReference storageReference;
@@ -55,6 +54,7 @@ public class AjustesFragment extends Fragment {
     private EditText txtEmail;
     private EditText txtCelular;
     View view;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

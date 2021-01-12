@@ -63,18 +63,15 @@ import retrofit2.Retrofit;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
-    private AppBarConfiguration mAppBarConfiguration;
     private ImageView photoImageView;
     private TextView nameTextView;
     private TextView emailTextView;
     private String url;
-    private Bitmap loadedImage;
     private DatabaseReference mDatabase;
     private FirebaseAuth mAuth;
     private DrawerLayout drawer;
     public static List<Alertas> alertas = new ArrayList<>();
     public static String imageUrl="";
-
     public static User user;
     public static NavigationView navigationView;
 

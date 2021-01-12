@@ -18,6 +18,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.infocovid_proyecto.models.Country;
 import com.example.infocovid_proyecto.subvistas.MainActivity;
 import com.example.infocovid_proyecto.libraries.NetUtilities;
 import com.example.infocovid_proyecto.R;
