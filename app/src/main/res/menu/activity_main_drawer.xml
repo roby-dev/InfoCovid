@@ -27,7 +27,7 @@
         <item
             android:id="@+id/nav_alertas"
             android:icon="@drawable/alertas"
-            android:title="@string/alertas" />
+            android:title="@string/prevencion" />
 
     </group>
     <group android:checkableBehavior="single" android:id="@+id/groupAjuestes">

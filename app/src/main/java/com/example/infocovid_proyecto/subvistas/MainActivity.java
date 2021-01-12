@@ -18,7 +18,7 @@ import com.example.infocovid_proyecto.models.API;
 import com.example.infocovid_proyecto.models.Alertas;
 import com.example.infocovid_proyecto.models.User;
 import com.example.infocovid_proyecto.subvistas.ajustes.AjustesFragment;
-import com.example.infocovid_proyecto.subvistas.alertas.AlertasFragment;
+import com.example.infocovid_proyecto.subvistas.prevencion.PrevencionFragment;
 import com.example.infocovid_proyecto.subvistas.cifras.CifrasFragment;
 import com.example.infocovid_proyecto.subvistas.home.HomeFragment;
 import com.example.infocovid_proyecto.subvistas.inicio.InicioFragment;
@@ -300,7 +300,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 break;
             case R.id.nav_alertas:
                 getSupportActionBar().hide();
-                getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment,new AlertasFragment()).addToBackStack(null).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment,new PrevencionFragment()).addToBackStack(null).commit();
                 break;
             case R.id.nav_noticias:
                 getSupportActionBar().hide();

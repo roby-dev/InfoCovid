@@ -1,4 +1,4 @@
-package com.example.infocovid_proyecto.subvistas.alertas;
+package com.example.infocovid_proyecto.subvistas.prevencion;
 
 import android.os.Bundle;
 
@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 import com.example.infocovid_proyecto.subvistas.MainActivity;
 import com.example.infocovid_proyecto.R;
 
-public class AlertasFragment extends Fragment {
+public class PrevencionFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

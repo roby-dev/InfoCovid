@@ -20,7 +20,7 @@
                 android:id="@+id/imageView3"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:layout_marginLeft="280dp"
+                android:layout_marginLeft="320dp"
                 android:layout_marginTop="20dp"
                 android:contentDescription="@string/logo_infocovid"
                 android:src="@drawable/covid" />
@@ -33,7 +33,7 @@
                 android:layout_centerVertical="true"
                 android:layout_gravity="center"
                 android:fontFamily="@font/text_me_one"
-                android:text="@string/alertas"
+                android:text="@string/prevencion"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display1"
                 android:textColor="@color/purple_200"
                 android:textSize="55dp"

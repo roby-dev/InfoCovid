@@ -42,8 +42,8 @@
 
     <fragment
         android:id="@+id/nav_alertas"
-        android:name="com.example.infocovid_proyecto.subvistas.alertas.AlertasFragment"
-        android:label="@string/alertas"
+        android:name="com.example.infocovid_proyecto.subvistas.prevencion.PrevencionFragment"
+        android:label="@string/prevencion"
         tools:layout="@layout/fragment_alertas" />
 
     <fragment
