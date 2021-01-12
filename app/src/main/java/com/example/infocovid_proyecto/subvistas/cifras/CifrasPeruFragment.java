@@ -42,7 +42,9 @@ public class CifrasPeruFragment extends Fragment {
     private TextView txtPCR;
     private Button btnRegresar;
 
-     @Override
+    private static final String DECIMAL_FORMAT = "###,###.#";
+
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
@@ -88,7 +90,6 @@ public class CifrasPeruFragment extends Fragment {
         MainActivity.navigationView.setCheckedItem(R.id.nav_cifras);
     }
 
-    private static final String DECIMAL_FORMAT = "###,###.#";
 
     private String formatValue(Number value, String formatString) {
         DecimalFormatSymbols formatSymbols = new DecimalFormatSymbols(Locale.ENGLISH);

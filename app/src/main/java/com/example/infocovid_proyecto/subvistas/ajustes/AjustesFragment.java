@@ -206,4 +206,5 @@ public class AjustesFragment extends Fragment {
         }
 
     }
+
 }

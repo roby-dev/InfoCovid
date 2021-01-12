@@ -297,8 +297,6 @@ public class MapaFragment extends Fragment implements OnMapReadyCallback {
         });
     }
 
-
-
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
