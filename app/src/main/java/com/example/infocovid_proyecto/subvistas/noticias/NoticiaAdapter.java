@@ -1,4 +1,4 @@
-package com.example.infocovid_proyecto.ui.noticias;
+package com.example.infocovid_proyecto.subvistas.noticias;
 
 import android.content.Context;
 import android.content.Intent;
@@ -6,10 +6,8 @@ import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.WebView;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
@@ -18,8 +16,6 @@ import androidx.viewpager.widget.PagerAdapter;
 import com.example.infocovid_proyecto.R;
 import com.example.infocovid_proyecto.models.Noticia;
 import com.squareup.picasso.Picasso;
-
-import org.w3c.dom.Text;
 
 import java.util.List;
 

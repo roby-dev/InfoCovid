@@ -1,4 +1,4 @@
-package com.example.infocovid_proyecto.ui.triaje;
+package com.example.infocovid_proyecto.subvistas.triaje;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -7,18 +7,11 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
-import android.widget.ProgressBar;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
 
-import com.example.infocovid_proyecto.MainActivity;
+import com.example.infocovid_proyecto.subvistas.MainActivity;
 import com.example.infocovid_proyecto.R;
 import com.example.infocovid_proyecto.models.Triaje;
 import com.google.firebase.auth.FirebaseAuth;

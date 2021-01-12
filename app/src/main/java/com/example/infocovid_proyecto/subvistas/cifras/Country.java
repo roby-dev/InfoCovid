@@ -1,4 +1,4 @@
-package com.example.infocovid_proyecto.ui.cifras;
+package com.example.infocovid_proyecto.subvistas.cifras;
 
 public class Country {
     private String country;

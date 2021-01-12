@@ -1,11 +1,10 @@
-package com.example.infocovid_proyecto.ui.triaje;
+package com.example.infocovid_proyecto.subvistas.triaje;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
@@ -14,13 +13,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.Toast;
 
-import com.example.infocovid_proyecto.MainActivity;
+import com.example.infocovid_proyecto.subvistas.MainActivity;
 import com.example.infocovid_proyecto.R;
-import com.example.infocovid_proyecto.models.Triaje;
-import com.example.infocovid_proyecto.ui.home.HomeFragment;
-import com.example.infocovid_proyecto.ui.inicio.InicioFragment;
+import com.example.infocovid_proyecto.subvistas.inicio.InicioFragment;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;

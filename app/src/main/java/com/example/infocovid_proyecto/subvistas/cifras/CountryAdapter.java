@@ -1,4 +1,4 @@
-package com.example.infocovid_proyecto.ui.cifras;
+package com.example.infocovid_proyecto.subvistas.cifras;
 
 import android.content.Context;
 import android.view.LayoutInflater;

@@ -1,7 +1,6 @@
-package com.example.infocovid_proyecto;
+package com.example.infocovid_proyecto.vistas;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentActivity;
 
 import android.content.Intent;
@@ -11,7 +10,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.infocovid_proyecto.R;
 import com.example.infocovid_proyecto.models.User;
+import com.example.infocovid_proyecto.subvistas.MainActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -113,7 +114,7 @@ public class register_activity extends FragmentActivity {
                                 public void onComplete(@NonNull Task<Void> task2) {
                                     if(task2.isSuccessful()){
                                         Toast.makeText(register_activity.this, "Gracias por registrarte", Toast.LENGTH_SHORT).show();
-                                        startActivity(new Intent(register_activity.this,MainActivity.class));
+                                        startActivity(new Intent(register_activity.this, MainActivity.class));
                                         finish();
                                     }else{
                                         Toast.makeText(register_activity.this, "No se pudieron crear los datos correctamente", Toast.LENGTH_SHORT).show();

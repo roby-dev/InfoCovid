@@ -36,14 +36,14 @@
             android:value="@string/google_maps_key" />
 
 
-        <activity android:name=".password_recovery" />
-        <activity android:name=".register_activity" />
+        <activity android:name=".vistas.password_recovery" />
+        <activity android:name=".vistas.register_activity" />
         <activity
-            android:name=".MainActivity"
+            android:name=".subvistas.MainActivity"
             android:label="@string/infocovid_19"
             android:theme="@style/Theme.Infocovidproyecto.NoActionBar" />
-        <activity android:name=".login_activity" />
-        <activity android:name=".activity_splash">
+        <activity android:name=".vistas.login_activity" />
+        <activity android:name=".vistas.activity_splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

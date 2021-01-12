@@ -1,16 +1,15 @@
-package com.example.infocovid_proyecto.ui.inicio;
+package com.example.infocovid_proyecto.subvistas.inicio;
 
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.infocovid_proyecto.MainActivity;
+import com.example.infocovid_proyecto.subvistas.MainActivity;
 import com.example.infocovid_proyecto.R;
 
 public class InicioFragment extends Fragment {

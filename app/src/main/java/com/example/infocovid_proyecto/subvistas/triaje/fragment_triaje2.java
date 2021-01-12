@@ -1,4 +1,4 @@
-package com.example.infocovid_proyecto.ui.triaje;
+package com.example.infocovid_proyecto.subvistas.triaje;
 
 import android.os.Bundle;
 
@@ -11,9 +11,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 
-import com.example.infocovid_proyecto.MainActivity;
+import com.example.infocovid_proyecto.subvistas.MainActivity;
 import com.example.infocovid_proyecto.R;
 
 

@@ -1,4 +1,4 @@
-package com.example.infocovid_proyecto.ui.triaje;
+package com.example.infocovid_proyecto.subvistas.triaje;
 
 import android.os.Bundle;
 
@@ -13,9 +13,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.TextView;
 
-import com.example.infocovid_proyecto.MainActivity;
+import com.example.infocovid_proyecto.subvistas.MainActivity;
 import com.example.infocovid_proyecto.R;
 
 public class TriajeFragment3 extends Fragment {

@@ -1,9 +1,7 @@
-package com.example.infocovid_proyecto.ui.cifras;
+package com.example.infocovid_proyecto.subvistas.cifras;
 
-import android.app.AlertDialog;
 import android.os.Bundle;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
@@ -17,22 +15,15 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.infocovid_proyecto.MainActivity;
+import com.example.infocovid_proyecto.subvistas.MainActivity;
 import com.example.infocovid_proyecto.R;
 import com.example.infocovid_proyecto.interfaces.AlertaApi;
-import com.example.infocovid_proyecto.models.API;
-import com.example.infocovid_proyecto.models.Alertas;
 import com.example.infocovid_proyecto.models.ApiCiudad;
 import com.example.infocovid_proyecto.models.Ciudad;
-import com.example.infocovid_proyecto.ui.inicio.InicioFragment;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-
-import org.w3c.dom.Text;
+import com.example.infocovid_proyecto.subvistas.inicio.InicioFragment;
 
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
-import java.util.List;
 import java.util.Locale;
 
 import retrofit2.Call;

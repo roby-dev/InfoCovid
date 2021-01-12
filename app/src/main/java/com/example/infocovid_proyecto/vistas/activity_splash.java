@@ -1,6 +1,4 @@
-package com.example.infocovid_proyecto;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.example.infocovid_proyecto.vistas;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -8,6 +6,8 @@ import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.WindowManager;
+
+import com.example.infocovid_proyecto.R;
 
 public class activity_splash extends Activity {
 
@@ -26,7 +26,7 @@ public class activity_splash extends Activity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(activity_splash.this,login_activity.class);
+                Intent intent = new Intent(activity_splash.this, login_activity.class);
                 startActivity(intent);
                 finish();
             }

@@ -1,4 +1,4 @@
-package com.example.infocovid_proyecto;
+package com.example.infocovid_proyecto.libraries;
 import android.net.Uri;
 import android.util.Log;
 

@@ -7,48 +7,48 @@
 
     <fragment
         android:id="@+id/nav_home"
-        android:name="com.example.infocovid_proyecto.ui.home.HomeFragment"
+        android:name="com.example.infocovid_proyecto.subvistas.home.HomeFragment"
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/nav_inicio"
-        android:name="com.example.infocovid_proyecto.ui.inicio.InicioFragment"
+        android:name="com.example.infocovid_proyecto.subvistas.inicio.InicioFragment"
         android:label="@string/inicio"
         tools:layout="@layout/fragment_inicio" />
 
     <fragment
         android:id="@+id/nav_mapa"
-        android:name="com.example.infocovid_proyecto.ui.mapa.MapaFragment"
+        android:name="com.example.infocovid_proyecto.subvistas.mapa.MapaFragment"
         android:label="@string/mapa"
         tools:layout="@layout/fragment_mapa2" />
 
     <fragment
         android:id="@+id/nav_triaje"
-        android:name="com.example.infocovid_proyecto.ui.triaje.TriajeFragment"
+        android:name="com.example.infocovid_proyecto.subvistas.triaje.TriajeFragment"
         android:label="@string/triaje"
         tools:layout="@layout/fragment_triaje" />
     <fragment
         android:id="@+id/nav_cifras"
-        android:name="com.example.infocovid_proyecto.ui.cifras.CifrasFragment"
+        android:name="com.example.infocovid_proyecto.subvistas.cifras.CifrasFragment"
         android:label="@string/cifras"
         tools:layout="@layout/fragment_cifras" />
 
     <fragment
         android:id="@+id/nav_noticias"
-        android:name="com.example.infocovid_proyecto.ui.noticias.NoticiasFragment"
+        android:name="com.example.infocovid_proyecto.subvistas.noticias.NoticiasFragment"
         android:label="@string/triaje"
         tools:layout="@layout/fragment_noticias" />
 
     <fragment
         android:id="@+id/nav_alertas"
-        android:name="com.example.infocovid_proyecto.ui.alertas.AlertasFragment"
+        android:name="com.example.infocovid_proyecto.subvistas.alertas.AlertasFragment"
         android:label="@string/alertas"
         tools:layout="@layout/fragment_alertas" />
 
     <fragment
         android:id="@+id/nav_ajustes"
-        android:name="com.example.infocovid_proyecto.ui.ajustes.AjustesFragment"
+        android:name="com.example.infocovid_proyecto.subvistas.ajustes.AjustesFragment"
         android:label="@string/ajustes"
         tools:layout="@layout/fragment_ajustes" />
 

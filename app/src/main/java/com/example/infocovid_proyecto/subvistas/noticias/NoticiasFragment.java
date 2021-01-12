@@ -1,4 +1,4 @@
-package com.example.infocovid_proyecto.ui.noticias;
+package com.example.infocovid_proyecto.subvistas.noticias;
 
 import android.animation.ArgbEvaluator;
 import android.app.AlertDialog;
@@ -11,22 +11,15 @@ import androidx.viewpager.widget.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.ViewParent;
-import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.AutoCompleteTextView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.example.infocovid_proyecto.MainActivity;
-import com.example.infocovid_proyecto.NetUtilities;
+import com.example.infocovid_proyecto.subvistas.MainActivity;
+import com.example.infocovid_proyecto.libraries.NetUtilities;
 import com.example.infocovid_proyecto.R;
 import com.example.infocovid_proyecto.models.Noticia;
-import com.example.infocovid_proyecto.ui.cifras.CifrasFragment;
-import com.example.infocovid_proyecto.ui.cifras.Country;
-import com.example.infocovid_proyecto.ui.cifras.CountryAdapter;
-import com.google.gson.JsonObject;
 
 import org.json.JSONArray;
 import org.json.JSONException;

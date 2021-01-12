@@ -1,4 +1,4 @@
-package com.example.infocovid_proyecto.ui.cifras;
+package com.example.infocovid_proyecto.subvistas.cifras;
 
 import android.app.AlertDialog;
 import android.os.AsyncTask;
@@ -7,7 +7,6 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,22 +18,18 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.infocovid_proyecto.MainActivity;
-import com.example.infocovid_proyecto.NetUtilities;
+import com.example.infocovid_proyecto.subvistas.MainActivity;
+import com.example.infocovid_proyecto.libraries.NetUtilities;
 import com.example.infocovid_proyecto.R;
-import com.example.infocovid_proyecto.ui.triaje.TriajeFragment5;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.w3c.dom.Text;
 
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
-import java.util.concurrent.ExecutionException;
 
 public class CifrasFragment extends Fragment {
 

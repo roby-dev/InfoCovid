@@ -1,15 +1,14 @@
-package com.example.infocovid_proyecto.ui.alertas;
+package com.example.infocovid_proyecto.subvistas.alertas;
 
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.infocovid_proyecto.MainActivity;
+import com.example.infocovid_proyecto.subvistas.MainActivity;
 import com.example.infocovid_proyecto.R;
 
 public class AlertasFragment extends Fragment {

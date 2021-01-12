@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".ui.inicio.InicioFragment">
+    tools:context=".subvistas.inicio.InicioFragment">
 
    <ImageView
        android:layout_width="250dp"

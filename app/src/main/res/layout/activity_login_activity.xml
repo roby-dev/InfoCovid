@@ -5,7 +5,7 @@
     android:id="@+id/activity_login_activity"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.infocovid_proyecto.login_activity"
+    tools:context="com.example.infocovid_proyecto.vistas.login_activity"
     >
 
 
