@@ -49,21 +49,6 @@ import java.util.TimerTask;
 
 public class login_activity extends FragmentActivity {
 
-    public FirebaseAuth mFireBaseAuth;
-    FirebaseAuth.AuthStateListener mAuthListener;
-    GoogleSignInClient mGoogleSignInClient;
-    private SignInButton signInButton;
-
-    CallbackManager callbackManager;
-    private AccessTokenTracker accessTokenTracker;
-    private AccessToken accessToken;
-    private static final String TAG ="FacebookAuthentication";
-    ProgressBar progressDialog;
-
-    DatabaseReference mDatabase;
-
-    private final static int RC_SIGN_IN = 123;
-
     private Button btnIngresar;
     private ImageButton btnGoogle;
     private EditText txtUsuario;
@@ -74,6 +59,18 @@ public class login_activity extends FragmentActivity {
     private TextView btnRecuperar;
     private LoginButton loginButton;
     private Timer t;
+    ProgressBar progressDialog;
+
+    public FirebaseAuth mFireBaseAuth;
+    FirebaseAuth.AuthStateListener mAuthListener;
+    GoogleSignInClient mGoogleSignInClient;
+    private SignInButton signInButton;
+    CallbackManager callbackManager;
+    private AccessTokenTracker accessTokenTracker;
+    private AccessToken accessToken;
+    private static final String TAG ="FacebookAuthentication";
+    DatabaseReference mDatabase;
+    private final static int RC_SIGN_IN = 123;
     private int counter=0;
 
     @Override

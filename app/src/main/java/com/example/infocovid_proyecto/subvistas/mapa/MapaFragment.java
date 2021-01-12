@@ -49,17 +49,17 @@ import java.util.List;
 
 public class MapaFragment extends Fragment implements OnMapReadyCallback {
 
+    private MapView mapView;
+    private AutoCompleteTextView atDistrito;
+    private static Context context;
+    private Animation rotateOpen,rotateClose,fromBottom,toBottom;
+    FloatingActionButton fbShow,fbAlert,fbCases;
+
     private GoogleMap mMap;
     private static final int REQUEST_LOCATION_PERMISSION = 1;
     private DatabaseReference mDatabase;
-    private MapView mapView;
     private List<User> usuarios = new ArrayList<>();
-    private AutoCompleteTextView atDistrito;
     public static List<Alertas> alertas = MainActivity.alertas;
-    private static Context context;
-    FloatingActionButton fbShow,fbAlert,fbCases;
-    private AnimationUtils animationUtils;
-    private Animation rotateOpen,rotateClose,fromBottom,toBottom;
     private boolean clicked =false;
 
     @Override
@@ -152,7 +152,7 @@ public class MapaFragment extends Fragment implements OnMapReadyCallback {
         });
 
 
-
+        AnimationUtils animationUtils = new AnimationUtils();
         rotateOpen = animationUtils.loadAnimation(context,R.anim.rotate_open_anim);
         rotateClose = animationUtils.loadAnimation(context,R.anim.rotate_close_anim);
         fromBottom = animationUtils.loadAnimation(context,R.anim.from_bottom_anim);

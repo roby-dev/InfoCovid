@@ -42,18 +42,17 @@ public class AjustesFragment extends Fragment {
 
     private Button btnActualizar;
     private ImageButton fotoUsuario;
-    private StorageReference storageReference;
-    private FirebaseStorage storage;
-    private static final int GALLERY_INTENT=1;
-    private Uri imageUri;
-    private DatabaseReference mDatabase;
-    private static String link ="";
-    private Bundle saved;
     private EditText txtNombres;
     private EditText txtApellidos;
     private EditText txtEmail;
     private EditText txtCelular;
     View view;
+
+    private StorageReference storageReference;
+    private FirebaseStorage storage;
+    private static final int GALLERY_INTENT=1;
+    private Uri imageUri;
+    private DatabaseReference mDatabase;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -61,7 +60,7 @@ public class AjustesFragment extends Fragment {
         // Inflate the layout for this fragment
        
          view = inflater.inflate(R.layout.fragment_ajustes,container,false);
-        saved=savedInstanceState;
+
         storage = FirebaseStorage.getInstance();
         storageReference = storage.getReference();
         settings(view);
@@ -173,7 +172,6 @@ public class AjustesFragment extends Fragment {
                             String userID = users.getUid();
                             MainActivity.user.setImagen(randomKey.toString());
                             mDatabase.child("Users").child(userID).setValue(MainActivity.user);
-                            link = randomKey.toString();
                             StorageReference mImageStorage = FirebaseStorage.getInstance().getReference();
                             StorageReference ref = mImageStorage.child("images").child(MainActivity.user.getImagen());
                             ref.getDownloadUrl().addOnCompleteListener(new OnCompleteListener<Uri>() {

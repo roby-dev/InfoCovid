@@ -32,8 +32,10 @@ public class NoticiasFragment extends Fragment {
 
     private Spinner atOpciones;
     private AlertDialog dialog;
-    private List<Noticia> noticias = new ArrayList<>();
     private View view;
+
+    private List<Noticia> noticias = new ArrayList<>();
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

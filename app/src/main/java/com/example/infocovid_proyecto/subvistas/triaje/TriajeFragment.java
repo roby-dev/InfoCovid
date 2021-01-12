@@ -24,16 +24,17 @@ import com.google.firebase.database.ValueEventListener;
 
 public class TriajeFragment extends Fragment {
 
-    public static int contador =0;
+
     public static CheckBox cb1;
     public static CheckBox cb2;
     public static CheckBox cb3;
     public static CheckBox cb4;
     public static CheckBox cb5;
+    Button btnContinuar;
+
+    public static int contador =0;
     private DatabaseReference mDatabase;
     public static Triaje triaje;
-
-    Button btnContinuar;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {

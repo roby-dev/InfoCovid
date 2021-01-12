@@ -31,7 +31,6 @@ public class NoticiaAdapter extends PagerAdapter {
     }
 
 
-
     @Override
     public int getCount() {
         return noticias.size();

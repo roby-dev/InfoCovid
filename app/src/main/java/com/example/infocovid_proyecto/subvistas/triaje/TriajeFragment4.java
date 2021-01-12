@@ -39,23 +39,21 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class TriajeFragment4 extends Fragment implements OnMapReadyCallback {
 
-    private GoogleMap mMap;
-    private static final String TAG = "Estilo del mapa";
-    private static final int REQUEST_LOCATION_PERMISSION = 1;
-    View rootView;
-    Button btnUbication;
-    private MapView mapView;
-    private double MyLat=0.00;
-    private double MyLong=0.00;
-    private Location loc;
-    private LocationManager locManager;
     EditText txtRegion;
     EditText txtProvincia;
     EditText txtDistrito;
     EditText txtDireccion;
     Button btnConfirmar;
-    private DatabaseReference mDatabase;
+    Button btnUbication;
+    private MapView mapView;
 
+    private GoogleMap mMap;
+    private static final int REQUEST_LOCATION_PERMISSION = 1;
+    private double MyLat=0.00;
+    private double MyLong=0.00;
+    private Location loc;
+    private LocationManager locManager;
+    private DatabaseReference mDatabase;
     private boolean txt1=false;
     private boolean txt2=false;
     private boolean txt3=false;

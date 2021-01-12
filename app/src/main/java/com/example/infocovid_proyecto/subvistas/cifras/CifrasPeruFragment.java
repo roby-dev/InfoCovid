@@ -32,6 +32,7 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 
 public class CifrasPeruFragment extends Fragment {
+
     private AutoCompleteTextView txtCiudad;
     private TextView ttCiudad;
     private TextView txtTotal;
@@ -40,6 +41,7 @@ public class CifrasPeruFragment extends Fragment {
     private TextView txtPR;
     private TextView txtPCR;
     private Button btnRegresar;
+
      @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

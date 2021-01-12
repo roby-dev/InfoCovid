@@ -206,5 +206,4 @@ public class User {
         Long = aLong;
     }
 
-
 }

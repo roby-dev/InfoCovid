@@ -43,10 +43,11 @@ public class CifrasFragment extends Fragment {
     private ProgressBar progressNegative;
     private ProgressBar progressTotal;
     private AlertDialog dialog;
+    private ImageButton ib;
+
     public static Country country;
     private CountryAdapter mAdapter;
     private List<Country> listCountrys = new ArrayList<>();
-    private ImageButton ib;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

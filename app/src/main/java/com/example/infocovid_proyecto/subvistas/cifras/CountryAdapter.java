@@ -23,6 +23,7 @@ public class CountryAdapter extends ArrayAdapter<Country> {
 
     private TextView autoItem;
     private ImageView countryIcon;
+
     private List<Country> countryEntryList = new ArrayList<Country>();
 
     public CountryAdapter(Context context, List<Country> paises){

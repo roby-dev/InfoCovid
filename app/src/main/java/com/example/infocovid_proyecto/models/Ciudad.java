@@ -1,6 +1,14 @@
 package com.example.infocovid_proyecto.models;
 
 public class Ciudad {
+
+    private String DEPARTAMENTO;
+    private int PR;
+    private int PCR;
+    private int TOTAL;
+    private int FALLECIDOS;
+    private String LETALIDAD;
+
     public String getDEPARTAMENTO() {
         return DEPARTAMENTO;
     }
@@ -49,10 +57,5 @@ public class Ciudad {
         this.LETALIDAD = LETALIDAD;
     }
 
-    private String DEPARTAMENTO;
-    private int PR;
-    private int PCR;
-    private int TOTAL;
-    private int FALLECIDOS;
-    private String LETALIDAD;
+
 }

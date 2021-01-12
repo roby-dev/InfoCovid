@@ -22,6 +22,7 @@ public class fragment_triaje2 extends Fragment {
     public static EditText txtDocumentacion;
     public static EditText txtFechaNacimiento;
     Button btnContinuar;
+
     static boolean txt1=false;
     static boolean txt2=false;
     static boolean txt3=false;

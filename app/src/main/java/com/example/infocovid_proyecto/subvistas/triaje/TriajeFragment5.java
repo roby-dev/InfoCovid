@@ -29,10 +29,6 @@ import java.util.Date;
 
 public class TriajeFragment5 extends Fragment {
 
-    private Button btnFinalizar;
-    private AlertDialog alertM;
-    private AlertDialog.Builder builder;
-    private DatabaseReference mDatabase;
     private CheckBox cb1;
     private CheckBox cb2;
     private CheckBox cb3;
@@ -41,9 +37,13 @@ public class TriajeFragment5 extends Fragment {
     private CheckBox cb6;
     private CheckBox cb7;
     private CheckBox cb8;
+    private Button btnFinalizar;
+    private AlertDialog alertM;
+    private AlertDialog.Builder builder;
 
+    private DatabaseReference mDatabase;
 
-      @Override
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
           View vista = inflater.inflate(R.layout.fragment_triaje5, container, false);

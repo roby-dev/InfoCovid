@@ -66,18 +66,18 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private ImageView photoImageView;
     private TextView nameTextView;
     private TextView emailTextView;
+    private DrawerLayout drawer;
+    public static NavigationView navigationView;
+
     private String url;
     private DatabaseReference mDatabase;
     private FirebaseAuth mAuth;
-    private DrawerLayout drawer;
     public static List<Alertas> alertas = new ArrayList<>();
     public static String imageUrl="";
     public static User user;
-    public static NavigationView navigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
